@@ -31,10 +31,10 @@ export default function CategoriesSection() {
         </h2>
       </div>
       {/* <h1 className="text-5xl place-self-center mt-5">SHOP</h1> */}
-      <div className="grid grid-cols-4 gap-6 p-10">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 p-3 md:p-10">
         <section className="col-span-1 flex flex-col gap-15 items-center">
           {/* Price filter */}
-          <div className="w-64 bg-white rounded-2xl p-6 shadow-sm">
+          <div className="md:w-64 w-[90%]  bg-white rounded-2xl p-6 shadow-sm">
             <h3 className="text-xl mb-4">Price</h3>
 
             <div className="flex justify-between text-sm text-gray-600 mb-2">

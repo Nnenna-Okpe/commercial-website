@@ -158,7 +158,7 @@ function LandingPage() {
 
       {/* CATEGORIES SNIPPET */}
       <section className="md:mt-20 flex flex-col justify-center items-center ">
-        <div className="flex flex-row justify-center items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 mx-auto ">
           <div className="flex flex-col justify-center items-center">
             <h2 className="text-xl font-bold text-start place-self-start mb-2">
               Gowns

@@ -30,17 +30,17 @@ function LandingPage() {
       {/* HOME PAGE*/}
       <section className="grid grid-cols-[3fr_2fr] m-0 p-0 bg-black max-h-screen w-full max-w-full ">
         <div className="h-screen flex flex-col justify-center">
-          <h1 className="text-white text-[clamp(1.5rem,4vw,3rem)] font-bold mt-32 ml-20">
+          <h1 className="text-white text-[clamp(1.5rem,4vw,3rem)] font-bold mt-32 ml-4 md:ml-20">
             Where Fashion Meets Confidence
           </h1>
-          <p className="text-gray-400 text-[clamp(0.9rem,2vw,1.1rem)] mt-6 ml-20 max-w-[400px]">
+          <p className="text-gray-400 text-[clamp(0.9rem,2vw,1.1rem)] mt-6 ml-4 md:ml-20 max-w-[400px]">
             Elevate your wardrobe with our curated collection of fashion-forward
             pieces designed to make you look and feel your best.
           </p>
           <button
             className="bg-black text-white 
             border-s-slate-600 border-2 border-solid
-          p-1 mt-2 ml-20 max-w-30 hover:bg-[#84706f]
+          p-1 mt-2 ml-4 md:ml-20 max-w-30 hover:bg-[#84706f]
            transition-discrete duration-300"
             onClick={() => navigate("/shop")}
           >

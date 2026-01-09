@@ -55,7 +55,7 @@ function LandingPage() {
       </section>
 
       {/* HIGHLIGHTS SECTION */}
-      <section className="p-8 bg-gray-100 flex justify-center items-center">
+      <section className="px-0 py-3 md:p-8 bg-gray-100 flex justify-center items-center">
         <div className="grid grid-cols-1 md:grid-cols-3 md:gap-10 gap-3 max-w-[80%]">
           {highlights.map((item) => (
             <div
@@ -181,7 +181,7 @@ function LandingPage() {
                     <img
                       src={gown.image}
                       alt={gown.name}
-                      className="md:min-h-[330px]"
+                      className="md:min-h-[330px] h-full"
                     />
 
                     <button
@@ -226,7 +226,7 @@ function LandingPage() {
               {featuredTops.map((top) => (
                 <div
                   key={top.id}
-                  className="border border-gray-300 m-1 md:min-w-2xs "
+                  className="border border-gray-300 m-1 md:min-w-2xs max-w-screen"
                 >
                   <div className="relative md:min-h-[330px]">
                     <button className="absolute top-3 left-3">

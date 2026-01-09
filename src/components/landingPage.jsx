@@ -28,7 +28,7 @@ function LandingPage() {
   return (
     <>
       {/* HOME PAGE*/}
-      <section className="grid grid-cols-[3fr_2fr] m-0 p-0 bg-black max-h-screen w-full max-w-full ">
+      <section className="grid md:grid-cols-[3fr_2fr] m-0 p-0 bg-black max-h-screen w-full max-w-full ">
         <div className="h-screen flex flex-col justify-center">
           <h1 className="text-white text-[clamp(1.5rem,4vw,3rem)] font-bold mt-32 ml-4 md:ml-20">
             Where Fashion Meets Confidence
@@ -50,7 +50,7 @@ function LandingPage() {
         <img
           src={homePagePic}
           alt="Main"
-          className="h-screen w-auto object-cover"
+          className="hidden md:block h-screen w-auto object-cover"
         />
       </section>
 
@@ -239,7 +239,7 @@ function LandingPage() {
                     <img
                       src={top.image}
                       alt={top.name}
-                      className="md:min-h-[330px] max-w-[200px]"
+                      className="w-full h-auto md:min-h-[330px] object-cover"
                     />
 
                     <button

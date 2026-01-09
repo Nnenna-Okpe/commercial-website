@@ -7,8 +7,12 @@ import bgImage from "../assets/images/attractive-woman-wearing-hat-posing-black-
 import Footer from "./footer.jsx";
 import { testimonials } from "../assets/store.jsx";
 import { editorsPick } from "../assets/store.jsx";
+import { useNavigate } from "react-router-dom";
+import { formatPrice } from "../assets/store.jsx";
+import { useCart } from "../context/CartContext";
 
 function LandingPage() {
+  const navigate = useNavigate();
   const gowns =
     categories.find((category) => category.id === "gowns")?.items || [];
 
@@ -16,6 +20,11 @@ function LandingPage() {
 
   const tops =
     categories.find((category) => category.id === "tops")?.items || [];
+
+  const featuredTops = tops.slice(0, 2);
+
+  const { addItem } = useCart();
+
   return (
     <>
       {/* HOME PAGE*/}
@@ -33,6 +42,7 @@ function LandingPage() {
             border-s-slate-600 border-2 border-solid
           p-1 mt-2 ml-20 max-w-30 hover:bg-[#84706f]
            transition-discrete duration-300"
+            onClick={() => navigate("/shop")}
           >
             Shop Now
           </button>
@@ -95,12 +105,19 @@ function LandingPage() {
 
                   {/* Action buttons */}
                   <div className="absolute inset-0 flex items-end justify-between p-4 opacity-0 group-hover:opacity-100 transition">
-                    <button className="bg-white/90 backdrop-blur p-2 rounded-full shadow">
+                    <button
+                      className="bg-white/90 backdrop-blur p-2 rounded-full shadow"
+                      onClick={() => navigate("/product")}
+                    >
                       <Search size={18} className="text-gray-800" />
                     </button>
 
                     <button className="bg-black p-2 rounded-full shadow">
-                      <ShoppingCart size={18} className="text-white" />
+                      <ShoppingCart
+                        size={18}
+                        className="text-white"
+                        onClick={() => addItem(editorPick)}
+                      />
                     </button>
                   </div>
                 </div>
@@ -130,7 +147,7 @@ function LandingPage() {
 
                   {/* Price */}
                   <p className="text-[#84706f] font-bold text-lg">
-                    {editorPick.price}
+                    {formatPrice(editorPick.price)}
                   </p>
                 </div>
               </div>
@@ -158,6 +175,7 @@ function LandingPage() {
                       <Search
                         size={24} // icon size in pixels
                         className="text-gray-700 hover:text-black transition-colors"
+                        onClick={() => navigate("/product")}
                       />
                     </button>
                     <img
@@ -167,9 +185,8 @@ function LandingPage() {
                     />
 
                     <button
-                      className="absolute bottom-3 right-3 
-              
-              "
+                      className="absolute bottom-3 right-3"
+                      onClick={() => addItem(gown)}
                     >
                       <ShoppingCart
                         size={24} // icon size in pixels
@@ -191,7 +208,9 @@ function LandingPage() {
                       ))}
                     </p>
                     <p>{gown.name}</p>
-                    <p className="text-red-500 mb-4">{gown.price}</p>
+                    <p className="text-red-500 mb-4">
+                      {formatPrice(gown.price)}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -199,14 +218,14 @@ function LandingPage() {
           </div>
           <div className="flex flex-col justify-center items-center">
             <h2 className="text-xl font-bold text-start place-self-start mb-2">
-              Gowns
+              Tops
             </h2>
             <hr className="border-t border-gray-300 w-[99%]  " />
             <hr className="border-t border-gray-300 w-[99%]  " />
             <div className="h-full w-full flex flex-row justify-around items-center  ">
-              {featuredGowns.map((gown) => (
+              {featuredTops.map((top) => (
                 <div
-                  key={gown.id}
+                  key={top.id}
                   className="border border-gray-300 m-1 md:min-w-2xs "
                 >
                   <div className="relative md:min-h-[330px]">
@@ -214,18 +233,18 @@ function LandingPage() {
                       <Search
                         size={24} // icon size in pixels
                         className="text-gray-700 hover:text-black transition-colors"
+                        onClick={() => navigate("/product")}
                       />
                     </button>
                     <img
-                      src={gown.image}
-                      alt={gown.name}
-                      className="md:min-h-[330px]"
+                      src={top.image}
+                      alt={top.name}
+                      className="md:min-h-[330px] max-w-[200px]"
                     />
 
                     <button
-                      className="absolute bottom-3 right-3 
-              
-              "
+                      className="absolute bottom-3 right-3"
+                      onClick={() => addItem(top)}
                     >
                       <ShoppingCart
                         size={24} // icon size in pixels
@@ -239,15 +258,17 @@ function LandingPage() {
                         <span
                           key={star}
                           className={
-                            star <= gown.rating ? "text-black" : "text-gray-300"
+                            star <= top.rating ? "text-black" : "text-gray-300"
                           }
                         >
                           ★
                         </span>
                       ))}
                     </p>
-                    <p>{gown.name}</p>
-                    <p className="text-red-500 mb-4">{gown.price}</p>
+                    <p>{top.name}</p>
+                    <p className="text-red-500 mb-4">
+                      {formatPrice(top.price)}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -260,6 +281,7 @@ function LandingPage() {
             border-s-slate-600 border-2 border-solid
           p-1 my-4 max-w-30 hover:bg-[#84706f]
            transition-discrete duration-300"
+          onClick={() => navigate("/shop")}
         >
           SHOP NOW
         </button>

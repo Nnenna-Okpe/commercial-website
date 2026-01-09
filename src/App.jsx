@@ -26,7 +26,7 @@ function App() {
       <div className="pt-18">
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/product/" element={<ProductDetails />} />
+          <Route path="/product" element={<ProductDetails />} />
           <Route path="/shop" element={<CategoriesSection />} />
           <Route path="/checkout" element={<CheckoutPage />} />
         </Routes>

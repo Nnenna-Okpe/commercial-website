@@ -32,100 +32,6 @@ export default function CategoriesSection() {
       </div>
       {/* <h1 className="text-5xl place-self-center mt-5">SHOP</h1> */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 p-3 md:p-10">
-        <section className="col-span-1 flex flex-col gap-15 items-center">
-          {/* Price filter */}
-          <div className="md:w-64 w-[90%]  bg-white rounded-2xl p-6 shadow-sm">
-            <h3 className="text-xl mb-4">Price</h3>
-
-            <div className="flex justify-between text-sm text-gray-600 mb-2">
-              <span>$0</span>
-              <span>$500</span>
-            </div>
-
-            <input
-              type="range"
-              min="0"
-              max="500"
-              defaultValue="250"
-              className="w-full accent-black cursor-pointer"
-            />
-
-            <p className="text-sm mt-3 text-gray-700">
-              Up to <span className="font-semibold">$250</span>
-            </p>
-          </div>
-
-          {/* Category Links */}
-          <div className="flex flex-col justify-center items-start pl-10  text-start gap-3 bg-white rounded-2xl p-6 shadow-lg w-65 text-sm font-medium uppercase tracking-widest ">
-            <h3 className="font-bold text-xl">Categories</h3>
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`bg-transparent border-0 p-0 m-0 leading-none uppercase text-sm transition ${
-                  activeCategory === category.id
-                    ? " underline text-black"
-                    : "text-gray-400 hover:text-black"
-                }`}
-              >
-                {category.name}
-              </button>
-            ))}
-            <p>accessories</p>
-            <p>Trousers</p>
-            <p>Shoes</p>
-            <p>Anything</p>
-            <p>Kidding</p>
-          </div>
-
-          {/* Color selection */}
-          <div className="flex flex-col items-center bg-white rounded-2xl p-6 shadow-lg h-40 w-64">
-            <h3 className="self-start text-xl mb-7 mt-4">Color</h3>
-
-            <div className="flex gap-2 mb-4">
-              {bgColors.map((color) => (
-                <span
-                  key={color.id}
-                  className={`w-9 h-9 rounded-full ${color.color} border border-gray-300 ring-1 ring-gray-400 hover:ring-black transition cursor-pointer`}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* size selection */}
-          <div className="flex flex-col items-center bg-white rounded-2xl p-6 shadow-lg h-40 w-64">
-            <h3 className="self-start text-xl mb-7 mt-4">Size</h3>
-
-            <div className="flex gap-2 mb-4">
-              {size.map((size) => (
-                <span
-                  key={size.id}
-                  className={`w-9 h-9 rounded-full flex justify-center items-center border bg-gray-300 border-gray-300 ring-1 ring-gray-400 hover:ring-black transition cursor-pointer`}
-                >
-                  <p className="text-lg font-medium">{size.text}</p>
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Tags selection */}
-
-          <div className="flex flex-col items-center bg-white rounded-2xl p-6 shadow-lg w-64">
-            <h3 className="self-start text-xl mb-5 mt-4">Tags</h3>
-
-            <div className="grid grid-cols-2 gap-2 mb-10">
-              {tags.map((tag) => (
-                <span
-                  key={tag.id}
-                  className={`flex justify-center items-center px-5 py-2 rounded-lg border bg-gray-100 border-gray-200 ring-1 ring-gray-200 hover:ring-black transition cursor-pointer`}
-                >
-                  <p className="text-base font-light">{tag.text}</p>
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Products */}
         <section className="col-span-3">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -179,6 +85,100 @@ export default function CategoriesSection() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+        {/* Filters */}
+        <section className="col-span-1 flex flex-col gap-15 items-center">
+          {/* Price filter */}
+          <div className="md:w-64 w-full  bg-white rounded-2xl p-6 shadow-sm">
+            <h3 className="text-xl mb-4">Price</h3>
+
+            <div className="flex justify-between text-sm text-gray-600 mb-2">
+              <span>$0</span>
+              <span>$500</span>
+            </div>
+
+            <input
+              type="range"
+              min="0"
+              max="500"
+              defaultValue="250"
+              className="w-full accent-black cursor-pointer"
+            />
+
+            <p className="text-sm mt-3 text-gray-700">
+              Up to <span className="font-semibold">$250</span>
+            </p>
+          </div>
+
+          {/* Category Links */}
+          <div className="flex flex-col justify-center items-start pl-10  text-start gap-3 bg-white rounded-2xl p-6 shadow-lg md:w-65 w-full text-sm font-medium uppercase tracking-widest ">
+            <h3 className="font-bold text-xl">Categories</h3>
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`bg-transparent border-0 p-0 m-0 leading-none uppercase text-sm transition ${
+                  activeCategory === category.id
+                    ? " underline text-black"
+                    : "text-gray-400 hover:text-black"
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
+            <p>accessories</p>
+            <p>Trousers</p>
+            <p>Shoes</p>
+            <p>Anything</p>
+            <p>Kidding</p>
+          </div>
+
+          {/* Color selection */}
+          <div className="flex flex-col items-center bg-white rounded-2xl p-6 shadow-lg h-40 md:w-64 w-full">
+            <h3 className="self-start text-xl mb-7 mt-4">Color</h3>
+
+            <div className="flex gap-2 mb-4">
+              {bgColors.map((color) => (
+                <span
+                  key={color.id}
+                  className={`w-9 h-9 rounded-full ${color.color} border border-gray-300 ring-1 ring-gray-400 hover:ring-black transition cursor-pointer`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* size selection */}
+          <div className="flex flex-col items-center bg-white rounded-2xl p-6 shadow-lg h-40 md:w-64 w-full">
+            <h3 className="self-start text-xl mb-7 mt-4">Size</h3>
+
+            <div className="flex gap-2 mb-4">
+              {size.map((size) => (
+                <span
+                  key={size.id}
+                  className={`w-9 h-9 rounded-full flex justify-center items-center border bg-gray-300 border-gray-300 ring-1 ring-gray-400 hover:ring-black transition cursor-pointer`}
+                >
+                  <p className="text-lg font-medium">{size.text}</p>
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Tags selection */}
+
+          <div className="flex flex-col items-center bg-white rounded-2xl p-6 shadow-lg w-full md:w-64">
+            <h3 className="self-start text-xl mb-5 mt-4">Tags</h3>
+
+            <div className="grid grid-cols-2 gap-2 mb-10">
+              {tags.map((tag) => (
+                <span
+                  key={tag.id}
+                  className={`flex justify-center items-center px-5 py-2 rounded-lg border bg-gray-100 border-gray-200 ring-1 ring-gray-200 hover:ring-black transition cursor-pointer`}
+                >
+                  <p className="text-base font-light">{tag.text}</p>
+                </span>
+              ))}
+            </div>
           </div>
         </section>
       </div>

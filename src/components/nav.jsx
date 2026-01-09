@@ -42,7 +42,10 @@ function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-3xl" onClick={() => setOpen(!open)}>
+        <button
+          className="md:hidden text-3xl mr-35"
+          onClick={() => setOpen(!open)}
+        >
           {open ? "✕" : "☰"}
         </button>
       </div>

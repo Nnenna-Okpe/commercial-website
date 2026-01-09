@@ -28,9 +28,9 @@ function LandingPage() {
   return (
     <>
       {/* HOME PAGE*/}
-      <section className="grid md:grid-cols-[3fr_2fr] m-0 p-0 bg-black max-h-screen w-full max-w-full ">
+      <section className="grid md:grid-cols-[3fr_2fr] m-0 p-0 bg-black max-h-full md:max-h-screen w-full max-w-full ">
         <div className="h-screen flex flex-col justify-center">
-          <h1 className="text-white text-[clamp(1.5rem,4vw,3rem)] font-bold mt-32 ml-4 md:ml-20">
+          <h1 className="text-white text-[clamp(1.5rem,4vw,3rem)] font-bold md:mt-32 ml-4 md:ml-20">
             Where Fashion Meets Confidence
           </h1>
           <p className="text-gray-400 text-[clamp(0.9rem,2vw,1.1rem)] mt-6 ml-4 md:ml-20 max-w-[400px]">

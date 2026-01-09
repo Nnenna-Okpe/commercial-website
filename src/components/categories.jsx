@@ -8,10 +8,12 @@ import { ShoppingCart, Search } from "lucide-react";
 import { formatPrice } from "../assets/store.jsx";
 import mainImage from "../assets/images/shop-background.jpg";
 import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export default function CategoriesSection() {
   const [activeCategory, setActiveCategory] = useState("gowns");
   const { addItem } = useCart();
+  const navigate = useNavigate();
 
   const selectedCategory = categories.find((cat) => cat.id === activeCategory);
 
